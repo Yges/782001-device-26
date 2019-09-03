@@ -1,7 +1,7 @@
 # Личный проект «Девайс»
 
 * Студент: [Egor P](https://up.htmlacademy.ru/htmlcss/26/user/782001).
-* Наставник: `Неизвестно`.
+* Наставник: [Дмитрий Мирошниченко](https://htmlacademy.ru/profile/id591417).
 
 ---
 
