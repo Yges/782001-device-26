@@ -1,21 +1,195 @@
-/* подключить шрифты*/
+/* подключить шрифты
+
 @font-face {
 
   font-family: "Open Sans";
   src: url("fonts/opensans.woff") format("woff");
 }
-
+*/
 body {
-padding: 0;
-margin: 0;
-background-color: white;
-font-family: Gilrou,Open Sans,"Arial",sans-serif;
+  margin: 0;
+  padding: 0;
+  font-family: Gilroy-ExtraBold, OpenSans-Light, "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 300;
+  color: #000000;
+  background-color: #ffffff;
 }
+
+a {
+  text-decoration: none;
+  /* всем сылкам черный цвет.
+  так как белые только в подвале.
+  там  и переопределим цвет*/
+  color: #000000;
+}
+
 header {
   background-color: #f0c52e;
   opacity: 0.5;
+}
+
+.header-search-text {
+  background-color: #f0c52e;
+  opacity: 0.5;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.header-search input:hover {
+  opacity: 0.6;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.header-search input:focus {
+  color: #000000;
+  opacity: 1;
+}
+
+.header-top {
+  font-family: OpenSans;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: 0.15px;
+  text-align: left;
+  color: #000000;
+}
+
+.header-navigation,
+.header-catalog-list,
+.header-catalog-sub,
+.header-servis-list {
+  list-style: none;
+}
+
+.header-navigation a:hover,
+.header-catalog-list a:hover,
+.header-catalog-sub a:hover,
+.header-servis-list a:hover,
+.footer-center-service a:hover {
+  opacity: 0.6;
+}
+
+.header-navigation a:focus,
+.header-catalog-list a:focus,
+.header-catalog-sub a:focus,
+.header-servis-list a:focus,
+.footer-center-service a:focus {
+  opacity: 0.3;
+}
+
+/* на белом фоне не видно. сделать после фона
+.slides-number {
+  color: #ffffff;
+  font-family: Gilroy;
+  font-size: 79px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 1.79px;
+}
+*/
+.slides-feature {
+  font-family: Gilroy;
+  font-size: 47px;
+  font-weight: 800;
+  line-height: 1.19;
+  letter-spacing: 0.47px;
+  text-align: left;
+  color: #000000;
+}
+
+.feature-item {
+  font-family: OpenSans;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: 0.15px;
+  text-align: left;
+  color: #464646;
+}
+
+.feature-tr {
+  font-family: Gilroy;
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.33;
+  letter-spacing: 0.36px;
+  text-align: left;
+  color: #000000;
+}
+
+.feature-tr-bottom {
+  font-family: OpenSans;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.54;
+  letter-spacing: 0.13px;
+  text-align: left;
+  color: #464646;
+}
+
+.slides-detail {
+  font-family: Gilroy;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33;
+  letter-spacing: 3.6px;
+  text-align: center;
+  color: #000000;
+  background-color: #f0c52e;
+}
+
+.popular p {
+  font-family: Gilroy;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33;
+  letter-spacing: 0.18px;
+  text-align: left;
+  color: #000000;
+}
+
+.service-list,
+.controls-list {
+  list-style: none;
+}
+
+.controls-item {
+  font-family: Gilroy;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 3.6px;
+  text-align: center;
+  color: #000000;
+}
+
+.servise-item h2 {
+  font-family: Gilroy;
+  font-size: 47px;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: 0.47px;
+  text-align: left;
+  color: #000000;
+}
+
+.servise-item p {
+  font-family: OpenSans;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: 0.15px;
+  text-align: left;
+  color: #464646;
+}
+
+/*
+header {
+  display: inline-block;
+  opacity: 0.5;
   margin: 40px 140px;
-  width: 1160px;
+  width: 100%;
   height: 186px;
   padding: 0;
 }
@@ -24,94 +198,294 @@ header {
   padding-left: 59px;
 
 }
-.header--device{
+
+.header--device {
   width: 163px;
   height: 35px;
   object-fit: contain;
 }
-.header__top{
+
+.header__top {
   display: flex;
   align-items: baseline;
-  padding-left: 56px;
+  padding-left: 63px;
   min-height: 16px;
 }
-.header__navigation li {
-display: inline-block;
 
+
+.header__search {
+  padding-right: 393px;
 }
-.header__search{
-  padding-right: 90px;
+
+.header-search-image {
+  border: none;
+  width: 16px;
+  height: 16px;
+  background: url("../img/search.png") center no-repeat;
+  padding-left: 16px;
 }
-.header-search-image{
-border: none;
-width: 16px;
-height: 16px;
-background: url("../img/search.png") center no-repeat;
-padding-left: 16px;
-}
+
 .header-search-text {
   border: none;
   width: 118px;
-    height: 15px;
+  height: 15px;
   background-color: #f0c52e;
-    font-family: OpenSans;
-    font-size: 15px;
-    font-weight: 300;
-    font-style: normal;
-    font-stretch: normal;
-    line-height: 2;
-    letter-spacing: 0.15px;
-    text-align: left;
-    color: rgba(0, 0, 0, 0.3);
+  font-family: OpenSans;
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2;
+  letter-spacing: 0.15px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.3);
 }
-.header-login{
-  padding-right: 90px;
+.header__navigation {
+
+  padding:0;
+}
+.header__navigation li {
+  display: inline-block;
+}
+
+.header__navigation a {
+  text-decoration: none;
+  font-family: OpenSans;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.15px;
+  text-align: left;
+  color: #000000;
 
 }
-.header-login-image{
+.header-login {
+  padding-right: 218px;
+
+}
+
+.header-login-image {
   display: inline-block;
-  width:13px;
-  height:12px;
+  width: 13px;
+  height: 12px;
   background: url("../img/user.png") center no-repeat;
 }
-.header-contrast{
-  padding-right: 90px;
+
+.header-contrast {
+  padding-right: 41px;
+  background: url("../img/compare.svg") no-repeat left center;
+
 }
 
-.header__catalog{
+.header-contrast a,
+.header-basket a {
+  margin-left: 13px;
+}
+
+.header-basket {
+  background: url("../img/cart.svg") no-repeat left center;
+}
+
+
+.header__catalog {
+  display: inline-block;
   padding: 0;
-  width: 214px;
-  height: 12px;
+  margin: 0;
 }
-.header--catalog{
+
+.header--catalog {
+  font-family: Gilroy, "Arial", sans-serif;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33;
+  letter-spacing: 3.6px;
+  padding-top: 50px;
+  color: #000000;
+  list-style: none;
   padding-left: 60px;
-  padding-top: 27px;
-   font-family: Gilroy, "Arial",sans-serif;
-   font-size: 18px;
-   font-weight: 800;
-   font-style: normal;
-   font-stretch: normal;
-   line-height: 1.33;
-   letter-spacing: 3.6px;
-   text-align: left;
-   color: #000000;
-   list-style: none;
 }
+
 .header--catalog>li {
-  position:relative;
+  position: relative;
 }
-.header--catalog-sub{
-  position:absolute;
+
+.header--catalog-sub {
+  position: absolute;
   display: none;
   z-index: 4;
 }
-.header--catalog > li:hover .header--catalog-sub {
+
+.header--catalog>li:hover .header--catalog-sub {
   display: block;
+}
+
+.header-servis {
+  display: inline-flex;
+  padding-left: 294px;
+  padding-right: 61px;
+
+}
+
+.header-servis a {
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33;
+  letter-spacing: 3.6px;
+  text-align: left;
+  color: #000000;
+}
+.header-servis-dostavka {
+  padding-right: 38px;
+}
+
+.header-servis-garant {
+  padding-right: 114px;
+}
+
+main {
+  margin-left: 140px;
+  margin-right: 140px;
+}
+
+.popular-back {
+  margin: 0;
+  padding: 0;
 }
 
 .popular-back li {
   display: inline-block;
+  padding-right: 40px;
 }
+
 .popular-back .popular {
-   text-align: center;
-   }
+  text-align: center;
+}
+
+.popular-img {
+  width: 160px;
+  height: 160px;
+  background-color: #f0c52e;
+  opacity: 0.5;
+}
+
+/*не могу понять откуда береться такой отступ от вр ?*/
+/*
+.popular-vr {
+  margin: 32% 20%;
+}
+
+.popular .text {
+  /* как сделать текст как на макете ??*/
+}
+
+/*s
+.service {
+  padding: 0;
+  margin: 0;
+  background-color: #e5e5e5;
+
+}
+
+.delivery {
+  display: block;
+  padding-right: 100px;
+  float: right;
+}
+
+.service-delivery {
+  width: 100%;
+  height: 288px;
+}
+
+.delivery-text {
+  width: 30%;
+  height: 26%;
+}
+
+.logotips {
+  padding-right: 143px;
+  padding-left: 140px;
+}
+
+.container-logotips {
+  display: flex;
+}
+
+footer {
+  width: 100%;
+  height: 323px;
+  background-color: #464646;
+  padding-right: 140px;
+  padding-left: 140px;
+}
+
+.footer-navi li {
+  display: inline-block;
+}
+
+.footer-login a,
+.footer-contrast a,
+.footer-basket a {
+  opacity: 0.7;
+  font-family: OpenSans;
+  font-size: 15px;
+  font-weight: 300;
+  letter-spacing: 0.15px;
+  color: rgba(255, 255, 255, 0.7);
+}
+.footer-center{
+ display: flex;
+ text-align: center;
+}
+.footer-center address {
+  width: 201px;
+  height: 15px;
+  font-family: OpenSans;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: left;
+  color: #ffffff;
+float: left;
+}
+.footer-center-service{
+  width: 50%;
+}
+.footer-center p {
+  float: right;
+}
+.footer-center-service li {
+  display: inline-block;
+}
+
+.footer-contact a,
+.footer-garant a,
+.footer-delivery a {
+  height: 12px;
+  font-family: Gilroy;
+  font-size: 18px;
+  font-weight: 800;
+  padding-right: 38px;
+  letter-spacing: 3.6px;
+  text-align: left;
+  color: #ffffff;
+}
+.footer-telephone a {
+  width: 164px;
+  height: 13px;
+  font-family: OpenSans;
+  font-size: 15px;
+  font-weight: 300;
+  text-align: right;
+  color: #ffffff;
+}
+
+
+.footer-social li {
+  display: inline-block;
+}
+ .footer-social-fb{
+   width: 32px;
+   height: 32px;
+   background:url("../img/fb.png") no-repeat left center;
+ }
+*/
