@@ -54,20 +54,24 @@ a {
   color: #000000;
 }
 
-header {
-  margin-top: 21px;
-  margin-left: 139px;
-  margin-right: 140px;
+header.container {
+  margin-top: 40px;
+
 }
 
 .header-logo {
-  float: left;
+  width: 163px;
+  height: 35px;
+  margin-top: -17px;
+  margin-bottom: 25px;
 }
 
 .main-navigation {
+  width: 1160px;
+  min-height: 186px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   background-color: #f0c52e;
   padding-left: 60px;
   padding-right: 60px;
@@ -86,7 +90,6 @@ header {
   width: 108px;
 }
 
-
 .header-search-button {
   display: none;
 }
@@ -94,7 +97,7 @@ header {
 .container {
   width: 1200px;
   margin: 0 auto;
-  padding: 0 ;
+  padding: 0;
 }
 
 .header-wraper {
@@ -121,6 +124,7 @@ header {
 
 .header-servis {
   display: flex;
+  padding-top: 5px;
   width: 100%;
   font-family: "Gilroy";
   font-size: 18px;
@@ -135,7 +139,7 @@ header {
   display: flex;
   width: 540px;
   justify-content: space-between;
-
+  text-transform: uppercase;
 }
 
 .header-catalog {
@@ -223,6 +227,11 @@ header {
   list-style: none;
 }
 
+.controls-list input {
+  appearance: none;
+  /* display: none; */
+
+}
 
 /* времеено
 .main-sliders li .slider-1png{
@@ -334,8 +343,8 @@ header {
 }
 
 .service {
-    display: flex;
-    width:1530px;
+  display: flex;
+  width: 1530px;
   background-color: #e5e5e5;
   background-position: bottom;
 
@@ -345,8 +354,17 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  width: 417px;
+  margin-top: -16px;
+  margin-right: 107px;
   padding-left: 163px;
   border-right: 7px solid black;
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 3.6px;
+  text-align: center;
+  color: #000000;
 }
 
 .service-list,
@@ -366,16 +384,7 @@ header {
   color: yellow;
 }
 
-.controls-list {
-  width: 417px;
-  margin-top: -16px;
-  font-family: "Gilroy";
-  font-size: 18px;
-  font-weight: 800;
-  letter-spacing: 3.6px;
-  text-align: center;
-  color: #000000;
-}
+
 
 .servise-item h2 {
   margin-top: -43px;
@@ -435,6 +444,7 @@ header {
 }
 
 .map-delevery {
+  padding-top: 35px;
   padding-left: 15px;
   font-family: "Gilroy";
   font-size: 16px;
@@ -457,6 +467,7 @@ header {
 .about-map {
   width: 560px;
   min-height: 222px;
+  margin-top:44px;
 }
 
 .map h2,
@@ -495,7 +506,9 @@ section .contacts-about {
 }
 
 .main-footer {
-  width: auto;
+  width: 1440px;
+  margin-left: auto;
+  margin-right: auto;
   padding-top: 45px;
   padding-left: 139px;
   padding-right: 140px;
@@ -521,7 +534,7 @@ section .contacts-about {
   /* залить цветом */
   fill: yellow;
   margin-right: auto;
-  margin-top:auto;
+  margin-top: auto;
 }
 
 .footer-service {
@@ -537,7 +550,7 @@ section .contacts-about {
   justify-content: space-between;
   margin: auto;
   padding: 0;
-
+  opacity: 0.3;
 }
 
 .footer-top {
@@ -549,15 +562,15 @@ section .contacts-about {
 
 .footer-center {
   display: flex;
- padding-top: 32px;
- justify-content: center;
+  padding-top: 32px;
+  align-items: center;
 }
 
 .footer-bottom {
   display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 0;
+  align-items: center;
+  width: auto;
+  margin-top: 70px;
 }
 
 .footer-htmlacademy {
@@ -595,7 +608,7 @@ section .contacts-about {
 }
 
 .footer-service a {
-   text-transform: uppercase;
+  text-transform: uppercase;
   font-family: "Gilroy";
   font-size: 18px;
   font-weight: 800;
@@ -652,15 +665,18 @@ main h1 {
 }
 
 .filter-container-top {
+  width: 1440px;
   min-height: 71px;
   display: flex;
   align-items: center;
   background-color: #ebebeb;
 }
-.filter-container-top .container{
+
+.filter-container-top .container {
   display: flex;
 
 }
+
 .sorting {
   display: flex;
   list-style: none;
@@ -668,12 +684,14 @@ main h1 {
 
 .wrapper {
   width: 467px;
+  min-height: 71px;
   background-color: #d9d9d9;
   padding-left: 201px;
   flex-shrink: 0;
-  margin-left: -140px;
+  margin-left: -120px;
 }
-.wrapper-left{
+
+.wrapper-left {
   width: 980px;
   display: flex;
   justify-content: space-between;
@@ -722,28 +740,33 @@ main h1 {
   padding-left: 201px;
   background-color: #ebebeb;
   flex-shrink: 0;
-  margin-left: -140px;
+  margin-left: -50px;
 
 }
 
 .market {
   display: flex;
+  margin-left: -140px;
 }
-.market .container{
+
+.market .container {
   display: flex;
 }
+
 .catalog-monopod {
   display: flex;
-  justify-content: space-around;
+  width: 973px;
+  flex-shrink: 0;
+  justify-content: center;
   flex-wrap: wrap;
-  padding-left: 73px;
+
 
 }
 
 .monopod-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: space-around;
 }
 
 .monopod-list li {
@@ -754,8 +777,92 @@ main h1 {
   border: none;
 }
 
+.price-sort legend {
+  padding-top: 87px;
+  margin-bottom: 41px;
+}
+
+.price-range {
+  width: 201px;
+  font-family: "Gilroy";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.71;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.price-controls {
+  position: relative;
+  min-height: 32px;
+  font-size: 0;
+}
+
+
+
+.range-controls {
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.range-controls .bar {
+  width: 50%;
+  height: 2px;
+  background-color: #91c92f;
+}
+
+.range-controls .scale {
+  min-height: 2px;
+  background-color: #dbdbdb;
+}
+
+.range-toogle {
+  position: absolute;
+  top: -10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  background: red;
+  /* почеу не видно центр ?  */
+  border: 10px solid #ffffff;
+}
+
+.range-toogle-min {
+  left: 0;
+}
+
+.range-toogle-max {
+  left: 50%;
+}
+
+.price-controls label {
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  font-family: "Gilroy";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.71;
+}
+
+.price-controls input {
+  width: 40px;
+  color: inherit;
+  font: inherit;
+  border: none;
+
+  background: inherit;
+}
+
+.price-controls .max-price,
+.price-controls .min-price {
+  width: 100px;
+  text-align: left;
+}
+
 .filter legend {
-  margin-top:69px;
+  margin-top: 69px;
   font-family: "Gilroy";
   font-size: 18px;
   font-weight: 800;
@@ -769,6 +876,69 @@ main h1 {
   list-style: none;
   line-height: 14px;
   padding-left: 0;
+}
+
+.color-list li {
+  padding-bottom: 17px;
+}
+
+/* Костомные чекбоксы */
+
+.check-input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.check::before {
+  content: "";
+  background-image: url("../img/checkbox-off.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  margin-right: 1.2em;
+  vertical-align: middle;
+}
+
+/* когда чекет */
+.check-input:checked+.check::before {
+  background-image: url("../img/checkbox-on.svg");
+}
+
+/* фокус и актив */
+.check-input:focus+.check,
+.check-input:active+.check {
+  font-weight: 600;
+  /* чтобы проверить */
+}
+
+/* радио кнопки */
+.radio::before {
+  content: "";
+  background-image: url("../img/radio-off.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  margin-right: 1.2em;
+  vertical-align: middle;
+}
+
+.check-input:checked+.radio::before {
+  background-image: url("../img/radio-on.svg");
+}
+
+.radio {
+  display: block;
+  padding-bottom: 14px;
+}
+
+.check-input:focus+.radio,
+.check-input:active+.radio {
+  font-weight: 600;
+  /* чтобы проверить */
 }
 
 .monopod-list {
@@ -834,8 +1004,8 @@ main h1 {
   align-items: center;
   padding-left: 30px;
   padding-right: 30px;
-  margin-left: auto;
-  margin-right: auto;
+  /* margin-left: auto;
+  margin-right: auto; */
   margin-bottom: 77px;
   margin-top: 41px;
   background-color: #ebebeb;
