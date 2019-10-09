@@ -1,0 +1,1588 @@
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/gilroyextrabold.woff2") format("woff2"),
+    url("../fonts/gilroyextrabold.woff") format("woff");
+  font-weight: 800;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Gilroy";
+  src: url("../fonts/gilroylight.woff2") format("woff2"),
+    url("../fonts/gilroylight.woff") format("woff");
+  font-weight: 300;
+  font-display: swap;
+}
+
+*,
+*::after,
+*::before {
+  box-sizing: inherit;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Open Sans', "Arial", sans-serif;
+  font-size: 15px;
+  line-height: 30px;
+  font-weight: 300;
+  color: #000000;
+  background-color: #ffffff;
+}
+
+a {
+  text-decoration: none;
+  /* всем сылкам черный цвет.
+  так как белые только в подвале.
+  там  и переопределим цвет*/
+  color: #000000;
+}
+
+.button {
+  border: none;
+  position: relative;
+  background-color: #ebebeb;
+  text-transform: uppercase;
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33;
+  letter-spacing: 3.6px;
+  text-align: center;
+  color: #000000;
+  /* немогу понять как сделать буквы */
+  z-index: 2;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 8px;
+  bottom: 9px;
+  right: -35px;
+  background-color: #f0c52e;
+  opacity: 0.5;
+
+  z-index: 1;
+}
+
+header.container {
+  margin-top: 40px;
+
+}
+
+.header-logo {
+  width: 163px;
+  height: 35px;
+  margin-top: -17px;
+  margin-bottom: 25px;
+}
+
+.header-logo:hover .header-device {
+  opacity: 0.7;
+}
+
+.header-logo:focus {
+  opacity: 0.4;
+}
+
+.main-navigation {
+  width: 1160px;
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  background-color: rgb(247, 225, 150);
+  padding-left: 60px;
+  padding-right: 60px;
+  padding-bottom: 18px;
+}
+
+.visually-hidden {
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+}
+
+/* .header-search {
+  width: 108px;
+} */
+
+.header-search-button {
+  display: none;
+}
+
+.container {
+  width: 1200px;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.header-wraper {
+  display: flex;
+  /* padding-left: 60px;
+  padding-right: 61px; */
+  justify-content: space-between;
+}
+
+.header-navigation {
+  display: flex;
+  /* продумать с шириной. */
+  width: 540px;
+  margin-top: auto;
+  /*или 0 ?*/
+  margin-left: auto;
+  justify-content: space-between;
+  /*почему не работает?7 */
+}
+
+.header-login::before {
+  content: "";
+  width: 13px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.1em;
+  background-image: url("../img/user.svg");
+  background-repeat: no-repeat;
+}
+
+.header-contrast {
+  padding-left: 218px;
+}
+
+.header-contrast::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.1em;
+  background-image: url("../img/compare.svg");
+  background-repeat: no-repeat;
+}
+
+.header-basket::before {
+  content: "";
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.1em;
+  background-image: url("../img/cart.svg");
+  background-repeat: no-repeat;
+
+}
+
+.header-servis {
+  display: flex;
+  padding-top: 5px;
+  width: 100%;
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33;
+  letter-spacing: 3.6px;
+  text-align: left;
+  color: #000000;
+}
+
+.header-servis-list {
+  display: flex;
+  width: 540px;
+  justify-content: space-between;
+  text-transform: uppercase;
+}
+
+.header-delevery {
+  padding-right: 80px;
+}
+
+.header-catalog {
+  margin-right: auto;
+}
+
+.header-catalog-list {
+  padding-left: 0;
+}
+
+/* .header-catalog-list:hover .header-catalog-sub {
+  display: flex;
+} */
+
+.header-catalog-sub {
+
+  text-transform: none;
+  font-family: "OpenSans";
+  font-size: 15px;
+  font-weight: 300;
+
+  line-height: 2.4;
+  letter-spacing: 0.15px;
+  text-align: left;
+}
+
+.header-catalog-sub li {}
+
+.header-item {
+  text-transform: uppercase;
+}
+
+.header-search::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.1em;
+  background-image: url("../img/search.svg");
+  background-repeat: no-repeat;
+
+}
+
+.header-search-text {
+  border: none;
+  background-color: rgb(247, 225, 150);
+  opacity: 0.5;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.header-search input:hover {
+  opacity: 0.6;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+.header-search input:focus {
+  color: #000000;
+  opacity: 1;
+}
+
+.header-top {
+  width: 100%;
+  font-family: 'Open Sans';
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: 0.15px;
+  text-align: left;
+  color: #000000;
+}
+
+.header-catalog-sub {
+  display: none;
+}
+
+.header-navigation,
+.header-catalog-list,
+.header-catalog-sub,
+.header-servis-list {
+  list-style: none;
+}
+
+.header-navigation a:hover,
+.header-catalog-list a:hover,
+.header-catalog-sub a:hover,
+.header-servis-list a:hover,
+.footer-center-service a:hover {
+  opacity: 0.6;
+}
+
+.header-navigation a:focus,
+.header-catalog-list a:focus,
+.header-catalog-sub a:focus,
+.header-servis-list a:focus,
+.footer-center-service a:focus {
+  opacity: 0.3;
+}
+
+
+.slides-number {
+  color: #ffffff;
+  font-family: "Gilroy";
+  font-size: 79px;
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: 1.79px;
+}
+
+.main-sliders-controls {
+  display: flex;
+  width: 122px;
+  position: absolute;
+  left: 1305px;
+  list-style: none;
+  justify-content: space-around;
+
+}
+
+.main-sliders {
+  display: flex;
+  list-style: none;
+  margin-left: 35px;
+}
+
+
+.controls-list input {
+  appearance: none;
+  opacity: 0;
+
+}
+
+.slides {
+  display: flex;
+}
+
+.slides-text {
+  width: 50%;
+  padding-top: 36px;
+  padding-left: 125px;
+}
+
+.slides-text table {
+  width: 530px;
+  padding-top: 55px;
+}
+
+
+.slides-two,
+.slides-three {
+  display: none;
+}
+
+.slides-feature {
+  width: 479px;
+  margin-bottom: 20px;
+  font-family: "Gilroy";
+  font-size: 47px;
+  font-weight: 800;
+  line-height: 1.19;
+  letter-spacing: 0.47px;
+  text-align: left;
+  color: #000000;
+}
+
+.feature-item {
+  width: 479px;
+  padding-bottom: 35px;
+
+  font-family: 'Open Sans';
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 2;
+  text-align: left;
+  color: #464646;
+}
+
+.feature-tr {
+  font-family: "Gilroy";
+  font-size: 36px;
+  font-weight: 300;
+  line-height: 1.33;
+  /* letter-spacing: 0.36px; */
+  text-align: left;
+  color: #000000;
+}
+
+.feature-tr td {
+  padding-right: 45px;
+}
+
+.feature-tr-bottom {
+  font-family: 'Open Sans';
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.54;
+  letter-spacing: 0.13px;
+  text-align: left;
+  color: #464646;
+}
+
+
+.slides-detail {
+  position: relative;
+  display: block;
+  width: 220px;
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33;
+  letter-spacing: 3.6px;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+}
+
+.slides-detail::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 8px;
+  bottom: 9px;
+  background-color: #f0c52e;
+  opacity: 0.5;
+
+  z-index: 1;
+}
+
+.popular-list {
+  display: flex;
+  margin-top: 95px;
+}
+
+.popular-back {
+  display: flex;
+  justify-content: space-between;
+  list-style: none;
+  padding: 0;
+  margin-bottom: 125px;
+}
+
+.popular p {
+  /* немогу подобрать размеры для разных браузеров
+ и понять не могу почему такая большая высота у блока p */
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33;
+  letter-spacing: 0.18px;
+  text-align: left;
+  color: #000000;
+  margin: 0;
+  padding: 0;
+  /* margin-top: -20px; */
+  /* padding-top: 50px; */
+}
+
+
+.popular-item {
+  width: 160px;
+  min-height: 160px;
+  display: flex;
+  justify-content: center;
+  background-color: rgb(247, 225, 150);
+}
+
+.popular:hover .popular-item {
+  background-color: rgb(240, 196, 46);
+
+}
+
+.popular:focus .popular-img {
+  opacity: 0.5;
+}
+
+.popular {
+  width: 160px;
+}
+
+.popular a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 160px;
+
+
+}
+
+.popular-monopod {
+  padding: 0;
+  padding-top: 20%;
+}
+
+.service {
+  display: flex;
+  width: 100%;
+  min-height: 288px;
+  margin-bottom: 95px;
+  background-color: #e5e5e5;
+  background-position: bottom;
+}
+
+.service .container {
+  display: flex;
+}
+
+.service-slider-slides {
+  padding-left: 90px;
+}
+
+.service-slider-controls {
+  position: relative;
+}
+
+.service-slider-controls::after {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 121px;
+  width: 319px;
+  height: 7px;
+  transform: rotate(90deg);
+  background-color: black;
+}
+
+.controls-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 277px;
+  margin-top: -45px;
+  padding: 0;
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 3.6px;
+  text-align: center;
+  color: #000000;
+}
+
+.service-list,
+.controls-list {
+  list-style: none;
+}
+
+.controls-item {
+  min-height: 40px;
+  text-transform: uppercase;
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 3.6px;
+  text-align: center;
+  color: black;
+}
+
+.controls-item label {
+  display: block;
+  width: 278px;
+  padding-left: 20px;
+  min-height: 40px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.controls-item input:checked+label {
+  background-color: black;
+  color: yellow
+}
+
+#delivery:checked~.service-list .servise-item:nth-child(1) {
+  display: block;
+}
+
+#garant:checked~.servise-garant {
+  display: block;
+}
+
+#contacts:checked~.service-list .servise-credit {
+  display: block;
+}
+
+.servise-item {
+  display: none;
+
+}
+
+.servise-item h2 {
+  margin-top: -43px;
+  margin-bottom: 30px;
+  font-family: "Gilroy";
+  font-size: 47px;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: 0.47px;
+  text-align: left;
+  color: #000000;
+}
+
+.servise-item p {
+  font-family: 'Open Sans';
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 2;
+  letter-spacing: 0.15px;
+  text-align: left;
+  color: #464646;
+}
+
+.delivery-text {
+  width: 426px;
+  min-height: 75px;
+}
+
+.garant-text {
+  width: 436px;
+  min-height: 75px;
+}
+
+.credit-text {
+  width: 425px;
+  min-height: 75px;
+}
+
+.logotips {
+  margin-bottom: 93px;
+}
+
+.logotips .container {
+  display: flex;
+  justify-content: space-around;
+}
+
+.logo-color {
+  display: none;
+  margin-top: -100px;
+}
+
+.logotip:hover .logo-color {
+  display: block;
+}
+
+.index-columns {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 92px;
+}
+
+.map {
+  position: relative;
+  width: 462px;
+  /* margin-right: 139px; */
+}
+
+.map::before,
+.about::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  width: 80px;
+  height: 7px;
+  background-color: black;
+}
+
+.map-text {
+  width: 462px;
+}
+
+.text-column {
+  padding-bottom: 15px;
+
+}
+
+.map-delevery {
+  padding-top: 35px;
+  padding-left: 15px;
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 2.5;
+  /* letter-spacing: 0.5px; */
+  text-align: left;
+  color: #000000;
+}
+
+.about {
+  position: relative;
+  width: 560px;
+  min-height: 46px;
+
+}
+
+.about-text {
+  width: 560px;
+}
+
+.about-map,
+.map-text {
+  margin-bottom: 65px;
+}
+
+.about-map {
+  width: 560px;
+  min-height: 222px;
+}
+
+.map h2,
+.about h2 {
+  padding-bottom: 5px;
+  font-family: "Gilroy";
+  font-size: 47px;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: 0.47px;
+  text-align: left;
+  color: #000000;
+}
+
+.delevery-text {
+  padding-bottom: 20px;
+}
+
+.map p,
+.about p {
+  font-family: 'Open Sans';
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 2;
+  text-align: left;
+  color: #464646;
+}
+
+section .contacts-about {
+  position: relative;
+  width: 260px;
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33;
+  letter-spacing: 3.6px;
+  text-align: center;
+  color: #000000;
+  text-transform: uppercase;
+  z-index: 1;
+  /* как сделать текст чтобы проступал ,,?? */
+}
+
+.contacts-about::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: 0px;
+  width: 260px;
+  height: 8px;
+  background-color: #f0c52e;
+  opacity: 0.5;
+}
+
+.main-footer {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 45px;
+  padding-bottom: 66px;
+  background-color: #464646;
+}
+
+.main-footer .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 1160px;
+}
+
+.footer-navi {
+  display: flex;
+  justify-content: space-between;
+  width: 340px;
+}
+
+.footer-top-logo {
+  fill: rgb(255, 197, 0);
+  margin-right: auto;
+  margin-top: auto;
+}
+
+.footer-top-logo:hover {
+  fill: rgb(167, 136, 32);
+
+}
+
+.footer-login::before {
+  content: "";
+  width: 13px;
+  height: 12px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 0.1em;
+  background-image: url("../img/user.svg");
+  background-repeat: no-repeat;
+  /* fill: yellow; не работает.
+  если менять в свг то в хедере становиться желтым  */
+}
+
+.footer-service {
+  display: flex;
+  width: 500px;
+  justify-content: space-around;
+  margin: auto;
+}
+
+.footer-social {
+  display: flex;
+  width: 142px;
+  justify-content: space-between;
+  margin: auto;
+  padding: 0;
+  opacity: 0.3;
+}
+
+.footer-top {
+  display: flex;
+  align-self: flex-end;
+  width: 100%;
+  margin: 0;
+}
+
+.footer-center {
+  display: flex;
+  padding-top: 32px;
+  align-items: center;
+}
+
+.footer-bottom {
+  display: flex;
+  align-items: center;
+  width: auto;
+  margin-top: 70px;
+}
+
+.footer-htmlacademy {
+
+  fill: rgb(255, 197, 0);
+}
+
+.footer-navi a {
+  opacity: 0.7;
+  font-family: 'Open Sans';
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2.4;
+  letter-spacing: 0.15px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.footer-center address,
+.footer-telephone a {
+  font-family: 'Open Sans';
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 2;
+  text-align: left;
+  color: white;
+}
+
+.footer-service,
+.footer-social,
+.footer-navi {
+  list-style: none;
+}
+
+.footer-service a {
+  text-transform: uppercase;
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33;
+  letter-spacing: 3.6px;
+  text-align: left;
+  color: white;
+}
+
+.logo-htmlacademy {
+  color: #ffc600;
+}
+
+.modal-map {
+  display: none;
+  top: 5%;
+  left: 50%;
+  margin-left: -480px;
+  width: 960px;
+  box-shadow: 0px 10px 20px 0 rgba(4, 6, 6, 0.2);
+}
+
+.modal-write {
+  display: none;
+  width: 960px;
+  top: 10%;
+  left: 50%;
+  margin-left: -480px;
+  padding: 75px 98px 100px 92px;
+  box-shadow: 0px 10px 20px 0 rgba(4, 6, 6, 0.2);
+}
+
+.modal-close {
+  position: absolute;
+  top: 22px;
+  right: 22px;
+  width: 55px;
+  height: 55px;
+  background-color: rgb(240, 197, 46);
+  border: 20px solid rgb(240, 197, 46);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.modal-send {
+  margin-top: 55px;
+}
+
+.modal-close::before,
+.modal-close::after {
+  content: "";
+  position: absolute;
+  top: 6px;
+  right: -18px;
+  width: 52px;
+  height: 3px;
+
+  background-color: white;
+}
+
+.modal-close::before {
+  transform: rotate(45deg);
+}
+
+.modal-close::after {
+  transform: rotate(-45deg);
+}
+
+.modal {
+  position: fixed;
+  color: black;
+  background-color: white;
+}
+
+.feedback-form label {
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 800;
+
+  line-height: 1.33;
+  text-align: left;
+  color: #000000;
+}
+
+.feedback-form input {
+  width: 360px;
+  min-height: 50px;
+  display: flex;
+  padding-left: 20px;
+  font-family: "OpenSans";
+  font-size: 14px;
+
+  line-height: 1.29;
+  text-align: left;
+  color: rgba(70, 70, 70, 0.4);
+  background-color: rgba(70, 70, 70, 0.2);
+}
+
+.feedback-form input:focus {
+  background-color: #ffffff;
+  color: #464646;
+}
+
+.feedback-textarea input:invalid {
+  background-color: rgb(245, 217, 217);
+  /* почему не закрашиват ?? */
+}
+
+.feedback-person {
+  display: flex;
+  justify-content: space-between;
+}
+
+.feedback-textarea {
+  margin-top: 20px;
+
+}
+
+.feedback-textarea textarea {
+  width: 100%;
+  min-height: 156px;
+  padding: 20px;
+
+  font-family: "OpenSans";
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: left;
+  color: rgba(70, 70, 70, 0.4);
+  background-color: rgba(70, 70, 70, 0.2);
+}
+
+.feedback-textarea textarea:focus {
+
+  background-color: #ffffff;
+  color: #464646;
+}
+
+main h1 {
+  padding-left: 201px;
+  font-family: "Gilroy";
+  font-size: 47px;
+  font-weight: 800;
+  line-height: 1.02;
+  letter-spacing: 0.47px;
+  text-align: left;
+  color: #000000;
+}
+
+.container .monopod-title {
+  padding-left: 59px;
+  padding-top: 17px;
+  margin-bottom: 20px;
+}
+
+.breadcrumbs {
+  display: flex;
+  list-style: none;
+  margin-bottom: 45px;
+}
+
+.breadcrumbs a {
+  padding-left: 16px;
+  /*стрелочки нарисовать*/
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.71;
+  letter-spacing: 0.14px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.filters {
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.filter-container-top {
+  width: 100%;
+  min-height: 71px;
+  display: flex;
+  align-items: center;
+  background-color: #ebebeb;
+}
+
+.filter-container-top .container {
+  display: flex;
+
+}
+
+.sorting {
+  width: 330px;
+  margin-left: 15px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+}
+
+.sorting li {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'OpenSans';
+  font-size: 14px;
+  line-height: 1.29;
+  text-align: left;
+  color: black;
+  opacity: 0.3;
+}
+
+.sorting .sorting-current {
+  color: black;
+  opacity: 1;
+}
+
+.wrapper {
+  width: 467px;
+  min-height: 71px;
+  background-color: #d9d9d9;
+  padding-left: 201px;
+  flex-shrink: 0;
+  margin-left: -140px;
+}
+
+.wrapper-left {
+  width: 980px;
+  display: flex;
+  padding-left: 74px;
+}
+
+.arrow-list {
+  display: flex;
+  align-items: center;
+  width: 60px;
+  justify-content: center;
+  margin-right: auto;
+  margin-left: 139px;
+}
+
+.sorting-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  padding-left: 230px;
+}
+
+.sorting-arrow li {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'OpenSans';
+  font-size: 2px;
+  line-height: 1.29;
+  text-align: left;
+
+}
+
+/* .sorting-arrow .arrow-down {
+  display: inline-block;
+  border: 10px solid white;
+  border-bottom-color: #000000;
+  border-top-width: 0px;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  font-size: 0;
+}
+
+ .sorting-arrow .arrow-top {
+  display: inline-block;
+  border: 10px solid #ffffff;
+  border-top-color: black;
+  border-bottom-width: 0px;
+  border-right-color: transparent;
+  border-left-color: transparent;
+  font-size: 0;
+} */
+
+.filters h2 {
+  text-transform: uppercase;
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 2.5;
+  letter-spacing: 3.5px;
+  text-align: left;
+  color: #000000;
+}
+
+.filter-container-left {
+  width: 327px;
+  background-color: #ebebeb;
+  flex-shrink: 0;
+  padding-right: 100px;
+  padding-left: 45px;
+
+}
+
+.market {
+  display: flex;
+  width: 100%;
+  background-color: #ebebeb;
+}
+
+.market .container {
+  display: flex;
+}
+
+.catalog-monopod {
+  display: flex;
+  width: 973px;
+  flex-shrink: 0;
+  justify-content: center;
+  flex-wrap: wrap;
+  background-color: white;
+
+
+}
+
+.monopod-list {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.monopod-list li {
+  position: relative;
+  width: 360px;
+}
+
+.show {
+  display: none;
+  padding: 0;
+  font-family: "Gilroy";
+  text-transform: uppercase;
+  text-align: center;
+  vertical-align: center;
+  font-size: 18px;
+  font-weight: 800;
+  letter-spacing: 3.6px;
+  text-align: center;
+  color: #000000
+}
+
+.point {
+  display: none;
+  padding: 0;
+  font-family: 'Open Sans';
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.13px;
+  text-align: center;
+  color: black;
+  opacity: 0.4;
+}
+
+.monopod .point,
+.monopod .show {
+  width: 160px;
+  margin-bottom: 33px;
+  border: none;
+}
+
+.monopod .actions {
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  margin-left: -120px;
+  width: 200px;
+  min-height: 58px;
+  padding: 40px;
+
+  z-index: 10;
+}
+
+.monopod-new {
+  background-image: url("../img/search.svg");
+  background-position: 50% 10%;
+  background-repeat: no-repeat;
+  background-size: 50px;
+  background-origin: border-box;
+}
+
+.filter fieldset {
+  position: relative;
+  border: none;
+}
+
+.price-sort {
+  margin-bottom: 33px;
+
+}
+
+.price-sort::before {
+  content: "";
+  position: absolute;
+  top: -70px;
+  width: 201px;
+  height: 2px;
+
+  background-color: black;
+}
+
+.price-sort legend {
+  padding-top: 87px;
+  margin-bottom: 41px;
+}
+
+.price-range {
+  width: 201px;
+  font-family: "Gilroy";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.71;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.2);
+}
+
+.price-controls {
+  position: relative;
+  min-height: 32px;
+  font-size: 0;
+}
+
+
+
+.range-controls {
+  position: relative;
+  margin-bottom: 10px;
+}
+
+.range-controls .bar {
+  width: 55%;
+  height: 2px;
+  background-color: #91c92f;
+}
+
+.range-controls .scale {
+  min-height: 2px;
+  background-color: #dbdbdb;
+}
+
+.range-toogle {
+  position: absolute;
+  top: -10px;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  box-shadow: 0 2px 1px 0 rgba(0, 1, 1, 0.2);
+  background: red;
+  /* почеу не видно центр ?  */
+  border: 10px solid #ffffff;
+}
+
+.range-toogle-min {
+  left: 0;
+}
+
+.range-toogle-max {
+  left: 55%;
+}
+
+.price-controls label {
+  display: inline-block;
+  vertical-align: top;
+  cursor: pointer;
+  font-family: "Gilroy";
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 1.71;
+}
+
+.price-controls input {
+  width: 40px;
+  color: inherit;
+  font: inherit;
+  border: none;
+  background: inherit;
+  text-align: left;
+  vertical-align: center;
+  background-color: #ebebeb;
+}
+
+.price-controls .max-price,
+.price-controls .min-price {
+  width: 100px;
+  text-align: left;
+  vertical-align: center;
+}
+
+.filter legend {
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 12px;
+  letter-spacing: 0.18px;
+  text-align: left;
+  color: #000000;
+}
+
+.color-sort {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.color-sort::before {
+  content: "";
+  position: absolute;
+  top: -42px;
+  width: 201px;
+  height: 2px;
+  background-color: black;
+}
+
+.color-sort legend {
+  margin-bottom: 13px;
+}
+.bluetooth-sort{
+margin-bottom: 10px;
+}
+.bluetooth{
+  margin-bottom: 8px;
+  }
+.bluetooth-sort::before{
+  content: "";
+  position: absolute;
+  top: -40px;
+  width: 201px;
+  height: 2px;
+  background-color: black;
+}
+.bluetooth-list{
+  font-family: 'OpenSans';
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 2.86;
+  letter-spacing: 0.14px;
+  text-align: left;
+}
+.demonstrate{
+  margin-left: 45px;
+}
+.filter ul {
+  list-style: none;
+  line-height: 14px;
+  padding-left: 0;
+}
+
+.color-list li {
+  padding-bottom: 17px;
+}
+
+/* Костомные чекбоксы */
+
+.check-input {
+  position: absolute;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
+.check::before {
+  content: "";
+  background-image: url("../img/checkbox-off.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 23px;
+  height: 23px;
+  margin-right: 1.2em;
+  vertical-align: middle;
+}
+
+/* когда чекет */
+.check-input:checked+.check::before {
+  background-image: url("../img/checkbox-on.svg");
+}
+
+/* фокус и актив */
+.check-input:focus+.check,
+.check-input:active+.check {
+  font-weight: 600;
+  /* чтобы проверить */
+}
+
+/* радио кнопки */
+.radio::before {
+  content: "";
+  background-image: url("../img/radio-off.svg");
+  background-repeat: no-repeat;
+  display: inline-block;
+  width: 26px;
+  height: 26px;
+  margin-right: 1.2em;
+  vertical-align: middle;
+}
+
+.check-input:checked+.radio::before {
+  background-image: url("../img/radio-on.svg");
+}
+
+.radio {
+  display: block;
+  padding-bottom: 14px;
+}
+
+.check-input:focus+.radio,
+.check-input:active+.radio {
+  font-weight: 600;
+  /* чтобы проверить */
+}
+
+.monopod-list {
+  list-style: none;
+}
+
+.monopod:hover {
+  opacity: 0.7;
+
+}
+
+.monopod:hover .show,
+.monopod:hover .point {
+  display: block;
+}
+
+
+
+.monopod-type {
+  font-family: "Gilroy";
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.33;
+  letter-spacing: 0.18px;
+  text-align: left;
+  color: #000000;
+}
+
+.monopod-price {
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.5;
+  letter-spacing: 0.16px;
+  text-align: right;
+  color: #464646;
+}
+
+.monopod-type {
+  display: flex;
+  justify-content: space-between;
+}
+
+.pagination-list {
+  width: 759px;
+  min-height: 70px;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 29px;
+  /* margin-left: auto;
+  margin-right: auto; */
+  margin-bottom: 77px;
+  margin-top: 41px;
+  background-color: #ebebeb;
+}
+
+.pagination-items {
+  width: 80px;
+  display: flex;
+  list-style: none;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
+}
+
+.pagination-list a {
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 3.2px;
+  text-align: left;
+  color: #000000;
+}
+
+.pagination-item a {
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 3.2px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.pagination-current a {
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 3.2px;
+  text-align: left;
+  color: #000000;
+}
