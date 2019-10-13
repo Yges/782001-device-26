@@ -44,6 +44,9 @@ a {
 }
 
 .button {
+  border: none;
+  position: relative;
+  background-color: #ebebeb;
   text-transform: uppercase;
   font-family: "Gilroy";
   font-size: 18px;
@@ -52,6 +55,19 @@ a {
   letter-spacing: 3.6px;
   text-align: center;
   color: #000000;
+  /* немогу понять как сделать буквы */
+  z-index: 2;
+}
+
+.button::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 8px;
+  bottom: 9px;
+  right: -35px;
+  background-color: rgb(240, 196, 46);
+  z-index: -1;
 }
 
 header.container {
@@ -66,16 +82,29 @@ header.container {
   margin-bottom: 25px;
 }
 
+.header-logo:hover .header-device {
+  opacity: 0.7;
+}
+
+.header-logo:focus {
+  opacity: 0.4;
+}
+
+.slider {
+
+  background-image: linear-gradient(rgb(247, 225, 150) 24%, white 0);
+}
+
 .main-navigation {
   width: 1160px;
 
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  background-color: #f0c52e;
+  background-color: rgb(247, 225, 150);
   padding-left: 60px;
-  padding-right: 60px;
-  padding-bottom: 18px;
+  padding-right: 55px;
+  padding-bottom: 14px;
 }
 
 .visually-hidden {
@@ -86,9 +115,7 @@ header.container {
   margin: -1px;
 }
 
-/* .header-search {
-  width: 108px;
-} */
+.header-search {}
 
 .header-search-button {
   display: none;
@@ -97,13 +124,13 @@ header.container {
 .container {
   width: 1200px;
   margin: 0 auto;
-  padding: 0;
+  padding: 0 20px;
 }
 
 .header-wraper {
   display: flex;
-  /* padding-left: 60px;
-  padding-right: 61px; */
+  padding-left: 4px;
+
   justify-content: space-between;
 }
 
@@ -112,54 +139,63 @@ header.container {
   /* продумать с шириной. */
   width: 540px;
   margin-top: auto;
+  padding-left: 33px;
   /*или 0 ?*/
   margin-left: auto;
   justify-content: space-between;
   /*почему не работает?7 */
 }
 
-.header-login::before {
-  content: "";
-  width: 13px;
-  height: 12px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.1em;
-  background-image: url("../img/user.svg");
-  background-repeat: no-repeat;
+.header-navigation span {
+  fill: black;
+  }
+  .header-login span{
+    padding-right: 0;
+  }
+
+  .header-basket span{
+    padding-right: 12px;
+  }
+  .header-contrast span{
+    padding-right: 5px;
+  }
+
+.login-name {
+  font-family: 'Open Sans';
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2;
+  letter-spacing: 0.15px;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.3);
 }
 
-.header-contrast {
-  padding-left: 218px;
+.header-login .login-name::before {
+  content: "Валентин Петухов";
+  width: 132px;
+  color: black;
+  margin-right: 0.8em;
 }
 
-.header-contrast::before {
+.header-login .login-clear::before {
   content: "";
-  width: 10px;
-  height: 10px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.1em;
-  background-image: url("../img/compare.svg");
-  background-repeat: no-repeat;
+  width: 132px;
+  color: black;
+  margin-right: 0.8em;
 }
 
-.header-basket::before {
-  content: "";
-  width: 12px;
-  height: 12px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.1em;
-  background-image: url("../img/cart.svg");
-  background-repeat: no-repeat;
 
+.header-contrast-padding {
+  padding-left: 174px;
 }
 
 .header-servis {
   display: flex;
-  padding-top: 5px;
   width: 100%;
+  padding-top: 5px;
+  padding-bottom: 15px;
   font-family: "Gilroy";
   font-size: 18px;
   font-weight: 800;
@@ -177,7 +213,7 @@ header.container {
 }
 
 .header-delevery {
-  padding-right: 80px;
+  padding-right: 75px;
 }
 
 .header-catalog {
@@ -185,7 +221,55 @@ header.container {
 }
 
 .header-catalog-list {
+  position: relative;
   padding-left: 0;
+}
+
+.header-item span {
+  padding-left: 5px;
+}
+
+/* .header-catalog-list::after {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  top: 11px;
+  right: -29px;
+  transform: rotate(90deg);
+  background-color: black;
+}
+
+.header-catalog-list::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 2px;
+  top: 12px;
+  right: -28px;
+  background-color: black;
+} */
+
+/* .header-catalog-list:hover .header-catalog-sub {
+  display: flex;
+} */
+
+.header-catalog-sub {
+
+  text-transform: none;
+  font-family: "OpenSans";
+  font-size: 15px;
+  font-weight: 300;
+
+  line-height: 2.4;
+  letter-spacing: 0.15px;
+  text-align: left;
+}
+
+.header-catalog-sub li {}
+
+.header-item {
+  text-transform: uppercase;
 }
 
 .header-search::before {
@@ -201,7 +285,9 @@ header.container {
 }
 
 .header-search-text {
-  background-color: #f0c52e;
+  padding-left: 11px;
+  border: none;
+  background-color: rgb(247, 225, 150);
   opacity: 0.5;
   color: rgba(0, 0, 0, 0.3);
 }
@@ -218,6 +304,7 @@ header.container {
 
 .header-top {
   width: 100%;
+  padding-top: 3px;
   font-family: 'Open Sans';
   font-size: 15px;
   font-weight: 300;
@@ -255,65 +342,145 @@ header.container {
 }
 
 
-.slides-number {
-  color: #ffffff;
+.sliders-number {
+  position: absolute;
+  display: block;
+  z-index: 1;
+  right: 35px;
+  bottom: 185px;
+  width: 166px;
+  height: 131px;
+
   font-family: "Gilroy";
-  font-size: 79px;
+  font-size: 179px;
   font-weight: 800;
   line-height: 1;
   letter-spacing: 1.79px;
+  text-align: right;
+  color: white;
+}
+
+.slider-list {
+  position: relative;
 }
 
 .main-sliders-controls {
   display: flex;
-  width: 122px;
-  position: absolute;
-  left: 1305px;
+
   list-style: none;
   justify-content: space-around;
 
+  position: absolute;
+  left: 88%;
+  bottom: 135px;
+  z-index: 100;
+
+  width: 141px;
+  height: 18px;
+
+  /* text-align: center; */
+  font-size: 0;
+  transform: translateX(-50%);
 }
+
+.slides {
+  display: none;
+}
+
+.main-sliders-controls label {
+  position: relative;
+
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  padding: 8px;
+
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+.main-sliders-controls label::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  border: 1px solid #000000;
+  border-radius: 50%;
+
+}
+
+.slider input {
+  display: none;
+}
+
+#control-first:checked~.main-sliders .slides-first {
+  display: flex;
+}
+
+#control-two:checked~.main-sliders .slides-two {
+  display: flex;
+}
+
+#control-three:checked~.main-sliders .slides-three {
+  display: flex;
+}
+
+#control-first:checked~.main-sliders-controls .slider-control-first::before,
+#control-two:checked~  .main-sliders-controls .slider-control-two::before,
+#control-three:checked~.main-sliders-controls .slider-control-three::before
+ {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 2;
+  width: 4px;
+  height: 4px;
+  margin: -4px;
+  background-color: inherit;
+  border: 2px solid red;
+  border-radius: 50%;
+}
+
 
 .main-sliders {
   display: flex;
   list-style: none;
-  margin-left: 35px;
-
+  margin-left: 52px;
+  margin-top: 0;
 }
 
+.main-sliders li {
+  position: relative;
+}
 
 .controls-list input {
   appearance: none;
-  /* display: none; */
+  opacity: 0;
 
 }
 
-/* времеено
-.main-sliders li .slider-1png{
-  transform:rotate(90deg);
-}*/
-.slides {
-  display: flex;
-}
+
 
 .slides-text {
   width: 50%;
-  padding-top:36px;
-  padding-left:125px;
+  padding-top: 37px;
+  padding-left: 125px;
 }
 
 .slides-text table {
-  padding-top: 45px;
+  width: 530px;
+  padding-top: 55px;
 }
 
-.slides-two,
-.slides-three {
-  display: none;
-}
+
+
 
 .slides-feature {
-  width:479px;
-  margin-bottom: 20px;
+  width: 479px;
+  margin-bottom: 19px;
   font-family: "Gilroy";
   font-size: 47px;
   font-weight: 800;
@@ -324,7 +491,7 @@ header.container {
 }
 
 .feature-item {
-  width:479px;
+  width: 479px;
   padding-bottom: 35px;
 
   font-family: 'Open Sans';
@@ -340,9 +507,13 @@ header.container {
   font-size: 36px;
   font-weight: 300;
   line-height: 1.33;
-  letter-spacing: 0.36px;
+  /* letter-spacing: 0.36px; */
   text-align: left;
   color: #000000;
+}
+
+.feature-tr td {
+  padding-right: 45px;
 }
 
 .feature-tr-bottom {
@@ -355,8 +526,12 @@ header.container {
   color: #464646;
 }
 
-/* как делать выход цвета за текст?*/
+
 .slides-detail {
+  position: relative;
+  display: block;
+  width: 220px;
+  z-index: 1;
   font-family: "Gilroy";
   font-size: 18px;
   font-weight: 800;
@@ -364,13 +539,27 @@ header.container {
   letter-spacing: 3.6px;
   text-align: center;
   color: #000000;
-  background-color: #f0c52e;
   text-transform: uppercase;
+}
+
+.slides-detail::before {
+  content: "";
+  position: absolute;
+  width: 220px;
+  height: 8px;
+  bottom: 9px;
+  left: 0px;
+  background-color: rgb(240, 196, 46);
+  z-index: -1;
 }
 
 .popular-list {
   display: flex;
+  margin-top: 95px;
+}
 
+.popular-list .container {
+  padding: 0;
 }
 
 .popular-back {
@@ -378,9 +567,15 @@ header.container {
   justify-content: space-between;
   list-style: none;
   padding: 0;
+  margin-bottom: 105px;
 }
 
 .popular p {
+  /* немогу подобрать размеры для разных браузеров
+ и понять не могу почему такая большая высота у блока p */
+  display: block;
+  margin-top: -20px;
+  padding: 0;
   font-family: "Gilroy";
   font-size: 18px;
   font-weight: 800;
@@ -388,8 +583,11 @@ header.container {
   letter-spacing: 0.18px;
   text-align: left;
   color: #000000;
-  margin-top: 0;
-  padding-top: 39px;
+}
+
+.popular .icon-selfi {
+  align-items: end;
+  padding-bottom: 2px;
 }
 
 .popular-item {
@@ -397,7 +595,16 @@ header.container {
   min-height: 160px;
   display: flex;
   justify-content: center;
-  background-color: #f0c52e;
+  background-color: rgb(247, 225, 150);
+}
+
+.popular:hover .popular-item {
+  background-color: rgb(240, 196, 46);
+}
+
+.popular-icon:focus .popular-img,
+.popular:focus .popular-item p {
+  opacity: 0.5;
 }
 
 .popular {
@@ -421,8 +628,10 @@ header.container {
 .service {
   display: flex;
   width: 100%;
-  background-color: #e5e5e5;
-  background-position: bottom;
+  min-height: 320px;
+  margin-bottom: 60px;
+  background-image: linear-gradient(#e5e5e5 90%, white 10%);
+
 }
 
 .service .container {
@@ -430,7 +639,23 @@ header.container {
 }
 
 .service-slider-slides {
-  padding-left: 117px;
+  width: 800px;
+  padding-left: 86px;
+}
+
+.service-slider-controls {
+  position: relative;
+}
+
+.service-slider-controls::after {
+  content: "";
+  position: absolute;
+  top: 60px;
+  left: 121px;
+  width: 319px;
+  height: 7px;
+  transform: rotate(90deg);
+  background-color: black;
 }
 
 .controls-list {
@@ -438,11 +663,8 @@ header.container {
   flex-direction: column;
   justify-content: space-between;
   width: 277px;
-  margin-top: -16px;
+  margin-top: -15px;
   padding: 0;
-
-  border-right: 7px solid black;
-
   font-family: "Gilroy";
   font-size: 18px;
   font-weight: 800;
@@ -457,15 +679,96 @@ header.container {
 }
 
 .controls-item {
-  width: 278px;
+  position: relative;
   min-height: 40px;
-  background-color: #000000;
+  text-transform: uppercase;
   font-family: "Gilroy";
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 3.6px;
   text-align: center;
+  color: black;
+}
+
+.controls-item:before {
+  content: "";
+  position: absolute;
+  width: 160px;
+  height: 8px;
+  top: 11px;
+  right: 117px;
+  z-index: -1;
+  background-color: rgb(240, 196, 46);
+}
+
+.controls-item label {
+  display: block;
+  width: 278px;
+  padding-left: 20px;
+  min-height: 40px;
+  text-align: left;
+  vertical-align: middle;
+}
+
+.service input {
+  display: none;
+}
+
+.servise-item {
+  display: none;
+  width: 690px;
+  min-height: 200px;
+}
+
+.servise-delivery {
+  background-image: url("../img/delivery.svg");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 13px;
+}
+
+.servise-garant {
+  background-image: url("../img/warranty.svg");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 13px;
+}
+
+.servise-credit {
+  background-image: url("../img/credit.svg");
+  background-repeat: no-repeat;
+  background-position-x: 100%;
+  background-position-y: 13px;
+}
+
+#delivery:checked~.service-slider-slides .service-list .servise-delivery {
+  display: block;
+}
+
+#garant:checked~.service-slider-slides .service-list .servise-garant {
+  display: block;
+}
+
+#contacts:checked~.service-slider-slides .service-list .servise-credit {
+  display: block;
+}
+
+#delivery:checked~.service-slider-controls .delivery-label {
+  background-color: black;
   color: yellow;
+  z-index: 1;
+}
+
+#garant:checked~.service-slider-controls .garant-label {
+  background-color: black;
+  color: yellow;
+  z-index: -1;
+}
+
+#contacts:checked~.service-slider-controls .contacts-label {
+  background-color: black;
+  color: yellow;
+  z-index: 2;
 }
 
 
@@ -507,29 +810,91 @@ header.container {
   min-height: 75px;
 }
 
+.logotips {
+  margin-bottom: 100px;
+}
+
 .logotips .container {
   display: flex;
+  justify-content: space-between;
+}
+
+.logotip {
+  position: relative;
+}
+
+.logo-bw {
+  position: relative;
+}
+
+.logo-color {
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: opacity 0.5s;
+}
+
+/* TODO:
+перенсти фокус с ли на а - немогу это сделать
+1. как делать каталог товаров ?
+2. бутоны на карточках товара - как убрать задний фон ? и остальное
+3.Третий слайд не могу сделать.
+*/
+
+.logo-color {
+  opacity: 0;
+  }
+
+.logo-bw {
+  opacity: 1;
+}
+
+.logotip:hover .logo-color {
+  opacity: 1;
+}
+
+.logotip:hover .logo-bw {
+  opacity: 0;
 }
 
 .index-columns {
   display: flex;
   justify-content: space-between;
-  padding: 93px 140px 96px 139px;
+  margin-bottom: 87px;
 }
 
 .map {
+  position: relative;
   width: 462px;
-  margin-right: 139px;
+  /* margin-right: 139px; */
+}
+
+.map::before,
+.about::before {
+  content: "";
+  position: absolute;
+  top: -15px;
+  width: 80px;
+  height: 7px;
+  background-color: black;
 }
 
 .map-text {
-  width: 462px;
+  width: 475px;
+}
 
+.map-row {
+  padding-bottom: 15px;
+}
+
+.text-column {
+  padding-bottom: 23px;
 }
 
 .map-delevery {
-  padding-top: 35px;
-  padding-left: 15px;
+  padding-top: 28px;
+  padding-left: 38px;
   font-family: "Gilroy";
   font-size: 16px;
   font-weight: 800;
@@ -540,22 +905,30 @@ header.container {
 }
 
 .about {
+  position: relative;
   width: 560px;
   min-height: 46px;
+
 }
 
 .about-text {
   width: 560px;
+  padding-bottom: 5px;
+}
+
+.about-map,
+.map-text {
+  margin-bottom: 60px;
 }
 
 .about-map {
   width: 560px;
   min-height: 222px;
-  margin-top: 44px;
 }
 
 .map h2,
 .about h2 {
+  padding-bottom: 5px;
   font-family: "Gilroy";
   font-size: 47px;
   font-weight: 800;
@@ -563,6 +936,10 @@ header.container {
   letter-spacing: 0.47px;
   text-align: left;
   color: #000000;
+}
+
+.delevery-text {
+  padding-bottom: 20px;
 }
 
 .map p,
@@ -576,9 +953,9 @@ header.container {
 }
 
 section .contacts-about {
+  position: relative;
   width: 260px;
-  margin-top: 82px;
-  background-color: yellow;
+  margin-left: 25px;
   font-family: "Gilroy";
   font-size: 18px;
   font-weight: 800;
@@ -587,6 +964,23 @@ section .contacts-about {
   text-align: center;
   color: #000000;
   text-transform: uppercase;
+  z-index: 1;
+  /* как сделать текст чтобы проступал ,,?? */
+}
+
+.contacts-about::after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  left: -22px;
+  width: 260px;
+  height: 8px;
+  background-color: rgb(240, 196, 46);
+  z-index: -1;
+}
+
+.contacts-about-write {
+  padding-left: 17px;
 }
 
 .main-footer {
@@ -594,8 +988,6 @@ section .contacts-about {
   margin-left: auto;
   margin-right: auto;
   padding-top: 45px;
-  padding-left: 139px;
-  padding-right: 140px;
   padding-bottom: 66px;
   background-color: #464646;
 }
@@ -604,74 +996,120 @@ section .contacts-about {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  width: 1160px;
 }
 
 .footer-navi {
   display: flex;
   justify-content: space-between;
-  width: 340px;
+  width: 363px;
+}
 
+.name {
+  font-family: 'OpenSans';
+  font-size: 15px;
+  font-weight: 300;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 2;
+  letter-spacing: 0.15px;
+  text-align: left;
+  color: rgba(255, 255, 255, 0.3);
 }
 
 .footer-top-logo {
-  fill: yellow;
+  fill: rgb(255, 197, 0);
   margin-right: auto;
   margin-top: auto;
 }
 
-.footer-login::before {
-  content: "";
-  width: 13px;
-  height: 12px;
-  display: inline-block;
-  vertical-align: middle;
-  margin-right: 0.1em;
-  background-image: url("../img/user.svg");
-  background-repeat: no-repeat;
-  /* fill: yellow; не работает.
-  если менять в свг то в хедере становиться желтым  */
+.footer-top-logo:hover {
+  fill: rgb(181, 146, 28);
+}
+
+.footer-top-logo:focus {
+  fill: rgb(125, 108, 48);
 }
 
 .footer-service {
   display: flex;
-  width: 500px;
-  justify-content: space-around;
+  width: 463px;
+  justify-content: space-between;
   margin: auto;
+  padding: 0;
+  padding-right: 36px;
 }
 
 .footer-social {
   display: flex;
-  width: 142px;
+  width: 165px;
   justify-content: space-between;
   margin: auto;
   padding: 0;
   opacity: 0.3;
+  padding-left: 27px;
+}
+
+.footer-social a {
+  fill: #fff;
+}
+
+.footer-social a:hover {
+  fill: rgb(181, 181, 181);
+}
+
+.footer-social a:focus {
+  fill: rgb(88, 88, 88);
+}
+
+.footer-telephone {
+  letter-spacing: 0.3px;
 }
 
 .footer-top {
   display: flex;
-  align-self: flex-end;
   width: 100%;
   margin: 0;
+  padding-bottom: 7px;
 }
 
 .footer-center {
   display: flex;
-  padding-top: 32px;
+  margin-bottom: 45px;
   align-items: center;
 }
 
 .footer-bottom {
   display: flex;
+  position: relative;
   align-items: center;
   width: auto;
-  margin-top: 70px;
+}
+
+.footer-bottom::before {
+  content: "";
+  position: absolute;
+  width: 80px;
+  height: 7px;
+  top: 14px;
+  left: 2px;
+  background-color: rgb(255, 197, 0);
+
 }
 
 .footer-htmlacademy {
+  fill: rgb(255, 197, 0);
+}
 
-  fill: yellow;
+.footer-htmlacademy:hover {
+  fill: rgb(181, 146, 28);
+}
+
+.footer-htmlacademy:focus {
+  fill: rgb(125, 108, 48);
+}
+
+.footer-navi span {
+  fill: #ffc600;
 }
 
 .footer-navi a {
@@ -684,11 +1122,20 @@ section .contacts-about {
   line-height: 2.4;
   letter-spacing: 0.15px;
   text-align: left;
-  color: rgba(255, 255, 255, 0.7);
+  color: rgba(147, 147, 147, 0.6);
+}
+
+.footer-navi a:hover {
+  color: #ffffff;
+}
+
+.footer-navi a:focus {
+  color: rgb(91, 91, 91);
 }
 
 .footer-center address,
 .footer-telephone a {
+  font-style: normal;
   font-family: 'Open Sans';
   font-size: 15px;
   font-weight: 300;
@@ -703,6 +1150,14 @@ section .contacts-about {
   list-style: none;
 }
 
+.footer-service a:hover {
+  color: rgb(166, 166, 166)
+}
+
+.footer-service a:focus {
+  color: rgb(125, 125, 125)
+}
+
 .footer-service a {
   text-transform: uppercase;
   font-family: "Gilroy";
@@ -714,9 +1169,6 @@ section .contacts-about {
   color: white;
 }
 
-.logo-htmlacademy {
-  color: #ffc600;
-}
 
 .modal-map {
   display: none;
@@ -743,8 +1195,8 @@ section .contacts-about {
   right: 22px;
   width: 55px;
   height: 55px;
-  background-color: rgb(235, 166, 38);
-  border: 20px solid rgb(235, 166, 38);
+  background-color: rgb(240, 197, 46);
+  border: 20px solid rgb(240, 197, 46);
   border-radius: 50%;
   cursor: pointer;
 }
@@ -809,7 +1261,7 @@ section .contacts-about {
 }
 
 .feedback-textarea input:invalid {
-  background-color: #f6dada;
+  background-color: rgb(245, 217, 217);
   /* почему не закрашиват ?? */
 }
 
@@ -853,12 +1305,28 @@ main h1 {
   color: #000000;
 }
 
+.container .monopod-title {
+  padding-left: 62px;
+  padding-top: 5px;
+  margin-bottom: 20px;
+}
+
 .breadcrumbs {
   display: flex;
-  padding-left: 201px;
   list-style: none;
-  margin-bottom: 49px;
-  margin-top: 30px;
+  margin-bottom: 45px;
+  margin-left: 8px;
+}
+
+.breadcrumbs li:nth-child(1)::after,
+.breadcrumbs li:nth-child(2)::after {
+  content: " ";
+  width: 4px;
+  min-height: 7px;
+  margin-left: 16px;
+  display: inline-block;
+  background-repeat: no-repeat;
+  background-image: url("../img/nav-arrow.svg");
 }
 
 .breadcrumbs a {
@@ -885,23 +1353,64 @@ main h1 {
   display: flex;
   align-items: center;
   background-color: #ebebeb;
+  background-image: linear-gradient(90deg, white 30%, transparent 25%),
+    linear-gradient(-90deg, white 1%, transparent 0%);
 }
 
 .filter-container-top .container {
   display: flex;
+}
 
+.filter-container-top h2 {
+  display: flex;
+  align-items: center;
+  text-transform: uppercase;
+  font-family: "Gilroy";
+  font-size: 16px;
+  font-weight: 800;
+  line-height: 1.5;
+  letter-spacing: 3.5px;
+  text-align: left;
+  color: black;
 }
 
 .sorting {
+  width: 325px;
+  margin-left: 11px;
   display: flex;
+  align-items: center;
+  justify-content: space-between;
   list-style: none;
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal;
+  line-height: 1.29;
+  letter-spacing: normal;
+  text-align: left;
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.sorting li {
+  display: flex;
+  justify-content: space-between;
+}
+
+.sorting .sorting-current {
+  color: black;
+  opacity: 1;
 }
 
 .wrapper {
+  display: flex;
   width: 467px;
   min-height: 71px;
+  align-items: center;
+
   background-color: #d9d9d9;
   padding-left: 201px;
+
   flex-shrink: 0;
   margin-left: -140px;
 }
@@ -909,8 +1418,7 @@ main h1 {
 .wrapper-left {
   width: 980px;
   display: flex;
-  justify-content: space-between;
-  padding-left: 74px;
+  padding-left: 75px;
 }
 
 .arrow-list {
@@ -922,48 +1430,61 @@ main h1 {
   margin-left: 139px;
 }
 
-/* .arrow-down {
-  display: inline-block;
-  border: 10px solid white;
-  border-bottom-color: #000000;
-  border-top-width: 0px;
-  border-right-color: transparent;
-  border-left-color: transparent;
+.sorting-arrow {
+  display: flex;
+  width: 78px;
+  align-items: center;
+  justify-content: space-between;
+  list-style: none;
+  margin-left: auto;
 }
 
-.arrow-top {
-  display: inline-block;
-  border: 10px solid #ffffff;
-  border-top-color: black;
-  border-bottom-width: 0px;
-  border-right-color: transparent;
-  border-left-color: transparent;
-} */
+.sorting-arrow li {
+  display: flex;
+  justify-content: space-between;
+  font-family: 'Open Sans';
+  font-size: 0px;
+  line-height: 1.29;
+  text-align: left;
+}
+
+.sorting-arrow .arrow-top {
+  width: 11px;
+  min-height: 10px;
+  background-image: url("../img/icon-up-dir.svg")
+}
+
+.sorting-arrow .arrow-down {
+  width: 11px;
+  min-height: 10px;
+  background-image: url("../img/icon-down-dir.svg")
+}
 
 .filters h2 {
+  text-transform: uppercase;
   font-family: "Gilroy";
   font-size: 16px;
   font-weight: 800;
   line-height: 2.5;
-  letter-spacing: 3.2px;
+  letter-spacing: 3.5px;
   text-align: left;
   color: #000000;
 }
 
 .filter-container-left {
-  width: 327px;
-  padding-left: 201px;
+  width: 467px;
+  margin-left: -140px;
   background-color: #ebebeb;
   flex-shrink: 0;
-  padding-right: 100px;
-  padding-left: 20px;
-
+  padding-left: 186px;
 }
 
 .market {
   display: flex;
   width: 100%;
   background-color: #ebebeb;
+  background-image: linear-gradient(90deg, white 30%, transparent 25%),
+    linear-gradient(-90deg, white 45%, transparent 25%);
 }
 
 .market .container {
@@ -972,19 +1493,21 @@ main h1 {
 
 .catalog-monopod {
   display: flex;
-  width: 973px;
+  width: 833px;
   flex-shrink: 0;
   justify-content: center;
   flex-wrap: wrap;
   background-color: white;
-
-
+  padding-top: 40px;
+  padding-left: 33px;
 }
 
 .monopod-list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-between;
+  padding-bottom: 0;
+  margin-bottom: 0;
 }
 
 .monopod-list li {
@@ -992,8 +1515,17 @@ main h1 {
   width: 360px;
 }
 
+.monopod {
+  margin-bottom: 35px;
+}
+
+.monopod-image {
+  margin-bottom: 33px;
+}
+
 .show {
   display: none;
+  position: relative;
   padding: 0;
   font-family: "Gilroy";
   text-transform: uppercase;
@@ -1003,7 +1535,19 @@ main h1 {
   font-weight: 800;
   letter-spacing: 3.6px;
   text-align: center;
-  color: #000000
+  color: #000000;
+  z-index: 1;
+}
+
+.show::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 8px;
+  bottom: 8px;
+  right: -15px;
+  background-color: rgb(240, 196, 46);
+  z-index: -1;
 }
 
 .point {
@@ -1018,12 +1562,14 @@ main h1 {
   opacity: 0.4;
 }
 
+
 .monopod .point,
 .monopod .show {
   width: 160px;
   margin-bottom: 33px;
   border: none;
 }
+
 
 .monopod .actions {
   position: absolute;
@@ -1046,7 +1592,23 @@ main h1 {
 }
 
 .filter fieldset {
+  position: relative;
   border: none;
+}
+
+.price-sort {
+  margin-bottom: 33px;
+
+}
+
+.price-sort::before {
+  content: "";
+  position: absolute;
+  bottom: 128px;
+  width: 201px;
+  height: 2px;
+
+  background-color: black;
 }
 
 .price-sort legend {
@@ -1074,11 +1636,11 @@ main h1 {
 
 .range-controls {
   position: relative;
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .range-controls .bar {
-  width: 50%;
+  width: 55%;
   height: 2px;
   background-color: #91c92f;
 }
@@ -1105,7 +1667,7 @@ main h1 {
 }
 
 .range-toogle-max {
-  left: 50%;
+  left: 55%;
 }
 
 .price-controls label {
@@ -1137,7 +1699,6 @@ main h1 {
 }
 
 .filter legend {
-  margin-top: 69px;
   font-family: "Gilroy";
   font-size: 18px;
   font-weight: 800;
@@ -1145,6 +1706,54 @@ main h1 {
   letter-spacing: 0.18px;
   text-align: left;
   color: #000000;
+}
+
+.color-sort {
+  position: relative;
+  margin-bottom: 18px;
+}
+
+.color-sort::before {
+  content: "";
+  position: absolute;
+  top: -45px;
+  width: 201px;
+  height: 2px;
+  background-color: black;
+}
+
+.color-sort legend {
+  margin-bottom: 13px;
+}
+
+.bluetooth-sort {
+  margin-bottom: 10px;
+}
+
+.bluetooth {
+  margin-bottom: 8px;
+}
+
+.bluetooth-sort::before {
+  content: "";
+  position: absolute;
+  top: -40px;
+  width: 201px;
+  height: 2px;
+  background-color: black;
+}
+
+.bluetooth-list {
+  font-family: 'Open Sans';
+  font-size: 14px;
+  font-weight: 300;
+  line-height: 2.86;
+  letter-spacing: 0.14px;
+  text-align: left;
+}
+
+.demonstrate {
+  margin-left: 45px;
 }
 
 .filter ul {
@@ -1222,15 +1831,12 @@ main h1 {
 
 .monopod:hover {
   opacity: 0.7;
-
 }
 
 .monopod:hover .show,
 .monopod:hover .point {
   display: block;
 }
-
-
 
 .monopod-type {
   font-family: "Gilroy";
@@ -1264,28 +1870,27 @@ main h1 {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding-left: 30px;
-  padding-right: 30px;
-  /* margin-left: auto;
-  margin-right: auto; */
+  padding-left: 50px;
+  padding-right: 29px;
+  margin-left: auto;
   margin-bottom: 77px;
-  margin-top: 41px;
+  margin-top: 0;
   background-color: #ebebeb;
 }
 
 .pagination-items {
-  list-style: none;
+  width: 80px;
   display: flex;
-  justify-content: center;
+  list-style: none;
+  justify-content: space-between;
   align-items: center;
+  padding: 0;
 }
 
 .pagination-list a {
   font-family: "Gilroy";
   font-size: 16px;
   font-weight: 800;
-  font-style: normal;
-  font-stretch: normal;
   line-height: 1.5;
   letter-spacing: 3.2px;
   text-align: left;
@@ -1311,312 +1916,3 @@ main h1 {
   text-align: left;
   color: #000000;
 }
-
-
-
-/*
-/*
-header {
-  display: inline-block;
-  opacity: 0.5;
-  margin: 40px 140px;
-  width: 100%;
-  height: 186px;
-  padding: 0;
-}
-
-.header__logo {
-  padding-left: 59px;
-
-}
-
-.header--device {
-  width: 163px;
-  height: 35px;
-  object-fit: contain;
-}
-
-.header__top {
-  display: flex;
-  align-items: baseline;
-  padding-left: 63px;
-  min-height: 16px;
-}
-
-
-.header__search {
-  padding-right: 393px;
-}
-
-.header-search-image {
-  border: none;
-  width: 16px;
-  height: 16px;
-  background: url("../img/search.png") center no-repeat;
-  padding-left: 16px;
-}
-
-.header-search-text {
-  border: none;
-  width: 118px;
-  height: 15px;
-  background-color: #f0c52e;
-  font-family: 'Open Sans';
-  font-size: 15px;
-  font-weight: 300;
-  font-style: normal;
-  font-stretch: normal;
-  line-height: 2;
-  letter-spacing: 0.15px;
-  text-align: left;
-  color: rgba(0, 0, 0, 0.3);
-}
-.header__navigation {
-
-  padding:0;
-}
-.header__navigation li {
-  display: inline-block;
-}
-
-.header__navigation a {
-  text-decoration: none;
-  font-family: OpenSans;
-  font-size: 15px;
-  font-weight: 300;
-  letter-spacing: 0.15px;
-  text-align: left;
-  color: #000000;
-
-}
-.header-login {
-  padding-right: 218px;
-
-}
-
-.header-login-image {
-  display: inline-block;
-  width: 13px;
-  height: 12px;
-  background: url("../img/user.png") center no-repeat;
-}
-
-.header-contrast {
-  padding-right: 41px;
-  background: url("../img/compare.svg") no-repeat left center;
-
-}
-
-.header-contrast a,
-.header-basket a {
-  margin-left: 13px;
-}
-
-.header-basket {
-  background: url("../img/cart.svg") no-repeat left center;
-}
-
-
-.header__catalog {
-  display: inline-block;
-  padding: 0;
-  margin: 0;
-}
-
-.header--catalog {
-  font-family: "Gilroy", "Arial", sans-serif;
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 1.33;
-  letter-spacing: 3.6px;
-  padding-top: 50px;
-  color: #000000;
-  list-style: none;
-  padding-left: 60px;
-}
-
-.header--catalog>li {
-  position: relative;
-}
-
-.header--catalog-sub {
-  position: absolute;
-  display: none;
-  z-index: 4;
-}
-
-.header--catalog>li:hover .header--catalog-sub {
-  display: block;
-}
-
-.header-servis {
-  display: inline-flex;
-  padding-left: 294px;
-  padding-right: 61px;
-
-}
-
-.header-servis a {
-  text-decoration: none;
-  font-size: 18px;
-  font-weight: 800;
-  line-height: 1.33;
-  letter-spacing: 3.6px;
-  text-align: left;
-  color: #000000;
-}
-.header-servis-dostavka {
-  padding-right: 38px;
-}
-
-.header-servis-garant {
-  padding-right: 114px;
-}
-
-main {
-  margin-left: 140px;
-  margin-right: 140px;
-}
-
-.popular-back {
-  margin: 0;
-  padding: 0;
-}
-
-.popular-back li {
-  display: inline-block;
-  padding-right: 40px;
-}
-
-.popular-back .popular {
-  text-align: center;
-}
-
-.popular-img {
-  width: 160px;
-  height: 160px;
-  background-color: #f0c52e;
-  opacity: 0.5;
-}
-
-/*не могу понять откуда береться такой отступ от вр ?*/
-/*
-.popular-vr {
-  margin: 32% 20%;
-}
-
-.popular .text {
-  /* как сделать текст как на макете ??*/
-}
-
-/*s
-.service {
-  padding: 0;
-  margin: 0;
-  background-color: #e5e5e5;
-
-}
-
-.delivery {
-  display: block;
-  padding-right: 100px;
-  float: right;
-}
-
-.service-delivery {
-  width: 100%;
-  height: 288px;
-}
-
-.delivery-text {
-  width: 30%;
-  height: 26%;
-}
-
-.logotips {
-  padding-right: 143px;
-  padding-left: 140px;
-}
-
-.container-logotips {
-  display: flex;
-}
-
-footer {
-  width: 100%;
-  height: 323px;
-  background-color: #464646;
-  padding-right: 140px;
-  padding-left: 140px;
-}
-
-.footer-navi li {
-  display: inline-block;
-}
-
-.footer-login a,
-.footer-contrast a,
-.footer-basket a {
-  opacity: 0.7;
-  font-family: OpenSans;
-  font-size: 15px;
-  font-weight: 300;
-  letter-spacing: 0.15px;
-  color: rgba(255, 255, 255, 0.7);
-}
-.footer-center{
- display: flex;
- text-align: center;
-}
-.footer-center address {
-  width: 201px;
-  height: 15px;
-  font-family: OpenSans;
-  font-size: 15px;
-  font-weight: 300;
-  text-align: left;
-  color: #ffffff;
-float: left;
-}
-.footer-center-service{
-  width: 50%;
-}
-.footer-center p {
-  float: right;
-}
-.footer-center-service li {
-  display: inline-block;
-}
-
-.footer-contact a,
-.footer-garant a,
-.footer-delivery a {
-  height: 12px;
-  font-family: "Gilroy";
-  font-size: 18px;
-  font-weight: 800;
-  padding-right: 38px;
-  letter-spacing: 3.6px;
-  text-align: left;
-  color: #ffffff;
-}
-.footer-telephone a {
-  width: 164px;
-  height: 13px;
-  font-family: OpenSans;
-  font-size: 15px;
-  font-weight: 300;
-  text-align: right;
-  color: #ffffff;
-}
-
-
-.footer-social li {
-  display: inline-block;
-}
- .footer-social-fb{
-   width: 32px;
-   height: 32px;
-   background:url("../img/fb.png") no-repeat left center;
- }
-*/
