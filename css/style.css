@@ -1,5 +1,5 @@
 @font-face {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   src: url("../fonts/gilroyextrabold.woff2") format("woff2"),
     url("../fonts/gilroyextrabold.woff") format("woff");
   font-weight: 800;
@@ -7,7 +7,7 @@
 }
 
 @font-face {
-  font-family: "Gilroy";
+  font-family: 'Gilroy';
   src: url("../fonts/gilroylight.woff2") format("woff2"),
     url("../fonts/gilroylight.woff") format("woff");
   font-weight: 300;
@@ -29,7 +29,7 @@ html {
 body {
   margin: 0;
   padding: 0;
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   line-height: 30px;
   font-weight: 300;
@@ -50,7 +50,7 @@ a {
   background-color: #ebebeb;
   border: none;
   text-transform: uppercase;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 40px;
@@ -60,7 +60,8 @@ a {
   z-index: 2;
 }
 
-.button:hover::before {
+.button:hover::before,
+.show:hover::before {
   height: 100%;
 }
 
@@ -99,7 +100,7 @@ header.container {
   background-color: rgb(247, 225, 150);
   padding-left: 60px;
   padding-right: 55px;
-  padding-bottom: 8px;
+  padding-bottom: 33px;
 }
 
 .header-logo {
@@ -119,11 +120,11 @@ header.container {
 
 .slider {
 
-  background-image: -o-linear-gradient(rgb(247, 225, 150) 27%, white 0);
+  background-image: -o-linear-gradient(rgb(247, 225, 150) 23%, white 0);
 
-  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(27%, rgb(247, 225, 150)), color-stop(0, white));
+  background-image: -webkit-gradient(linear, left top, left bottom, color-stop(23%, rgb(247, 225, 150)), color-stop(0, white));
 
-  background-image: linear-gradient(rgb(247, 225, 150) 27%, white 0);
+  background-image: linear-gradient(rgb(247, 225, 150) 23%, white 0);
 }
 
 .main-navigation {
@@ -208,7 +209,7 @@ header.container {
 }
 
 .login-clear {
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
   font-style: normal;
@@ -233,7 +234,7 @@ header .login-clear {
   display: flex;
   width: 100%;
   padding-top: 5px;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 1.33;
@@ -305,7 +306,7 @@ header .login-clear {
   background-color: rgb(247, 225, 150);
   z-index: 2;
   text-transform: none;
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 2.4;
@@ -370,7 +371,7 @@ header .login-clear {
 
   width: 100%;
   padding-top: 1px;
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 2;
@@ -429,7 +430,7 @@ header .login-clear {
   width: 167px;
   height: 131px;
   margin: 0;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 179px;
   font-weight: 800;
   line-height: 1;
@@ -499,7 +500,13 @@ header .login-clear {
 
 
 .slider input {
-  display: none;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  top:350px;
+  right: 200px;
 }
 
 #control-first:checked~.main-sliders .slides-first {
@@ -519,14 +526,20 @@ header .login-clear {
   display: -ms-flexbox;
   display: flex;
 }
+#control-first:focus~.main-sliders-controls .slider-1,
+#control-two:focus~.main-sliders-controls .slider-2,
+#control-three:focus~.main-sliders-controls .slider-3{
+border: 1px solid orange;
+}
 
 #control-first:checked~.main-sliders-controls .slider-1::before,
 #control-two:checked~.main-sliders-controls .slider-2::before,
 #control-three:checked~.main-sliders-controls .slider-3::before {
   content: "";
   position: absolute;
-  left: 3px;
-  top: 2.5px;
+  left: 48%;
+  top: 48%;
+  transform: translate(-48%, -48%);
   z-index: 2;
   width: 6px;
   height: 6px;
@@ -541,8 +554,8 @@ header .login-clear {
   display: flex;
   list-style: none;
   margin: 0;
-  padding-left: 22px;
-  padding-top: 27px;
+  padding-left: 20px;
+  padding-top: 0;
 }
 
 .main-sliders li {
@@ -591,7 +604,7 @@ header .login-clear {
 .slides-feature {
   width: 508px;
   margin-bottom: 19px;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 47px;
   font-weight: 800;
   line-height: 1.19;
@@ -604,7 +617,7 @@ header .login-clear {
   width: 479px;
   padding-bottom: 28px;
 
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 2;
@@ -632,7 +645,7 @@ header .login-clear {
   display: -ms-flexbox;
   display: flex;
   width: 100%;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 36px;
   font-weight: 300;
   line-height: 1.33;
@@ -665,7 +678,7 @@ header .login-clear {
   justify-content: space-between;
   width: 100%;
   padding-top: 7px;
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 13px;
   font-weight: 300;
   line-height: 1.54;
@@ -684,7 +697,7 @@ header .login-clear {
   width: 220px;
   height: 40px;
   z-index: 1;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 40px;
@@ -798,7 +811,7 @@ img.popular-selfi {
   flex-direction: column;
   width: 160px;
   min-height: 240px;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 1.33;
@@ -872,7 +885,7 @@ img.popular-selfi {
   width: 277px;
   margin-top: -15px;
   padding: 0;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 3.6px;
@@ -889,7 +902,7 @@ img.popular-selfi {
   position: relative;
   min-height: 40px;
   text-transform: uppercase;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 800;
   letter-spacing: 3.6px;
@@ -936,7 +949,11 @@ img.popular-selfi {
 }
 
 .service input {
-  display: none;
+  position: absolute;
+  clip: rect(0 0 0 0);
+  width: 1px;
+  height: 1px;
+  margin: -1px;
 }
 
 .servise-item {
@@ -1012,7 +1029,7 @@ img.popular-selfi {
 .servise-item h2 {
   margin-top: -43px;
   margin-bottom: 26px;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 47px;
   font-weight: 800;
   line-height: 1.29;
@@ -1022,7 +1039,7 @@ img.popular-selfi {
 }
 
 .servise-item p {
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 2;
@@ -1102,7 +1119,7 @@ img.popular-selfi {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  margin-bottom: 80px;
+  margin-bottom: 81px;
 }
 
 .map {
@@ -1125,22 +1142,37 @@ img.popular-selfi {
 }
 
 .map-row {
-  padding-bottom: 15px;
+  padding-bottom: 13px;
 }
 
 .text-column {
-  padding-bottom: 18px;
+  padding-bottom: 20px;
 }
 
 .map-delevery {
   padding-top: 24px;
   padding-left: 37px;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 2.5;
   text-align: left;
   color: #000000;
+  list-style: none;
+  padding-left: 0;
+
+}
+
+.map-delevery li::before {
+  content: "";
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: 1px solid black;
+margin-left: 2px;
+margin-right: 26px;
+
 }
 
 .about {
@@ -1157,7 +1189,7 @@ img.popular-selfi {
 
 .about-map,
 .map-text {
-  margin-bottom: 60px;
+  margin-bottom: 54px;
 }
 
 .about-map {
@@ -1168,7 +1200,7 @@ img.popular-selfi {
 .map h2,
 .about h2 {
   padding-bottom: 5px;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 47px;
   font-weight: 800;
   line-height: 1.02;
@@ -1178,12 +1210,12 @@ img.popular-selfi {
 }
 
 .delevery-text {
-  padding-bottom: 20px;
+  padding-bottom: 24px;
 }
 
 .map p,
 .about p {
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 2;
@@ -1196,7 +1228,7 @@ section .contacts-about {
   display: block;
   width: 260px;
   padding: 0;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 40px;
@@ -1264,7 +1296,7 @@ section .contacts-about {
 }
 
 .name {
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
   font-style: normal;
@@ -1390,8 +1422,7 @@ section .contacts-about {
 }
 
 .footer-navi a {
-  opacity: 0.7;
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
   font-style: normal;
@@ -1412,7 +1443,7 @@ section .contacts-about {
 
 .footer-login {
   margin-left: auto;
-  padding-right: 42px;
+  padding-right: 35px;
 }
 
 .footer-login .login-clear {
@@ -1429,6 +1460,7 @@ section .contacts-about {
 
 .footer-login span {
   padding-right: 8px;
+  padding-left: 8px;
 
 }
 
@@ -1447,7 +1479,7 @@ section .contacts-about {
 .footer-center address,
 .footer-telephone a {
   font-style: normal;
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 15px;
   font-weight: 300;
   line-height: 2;
@@ -1471,7 +1503,7 @@ section .contacts-about {
 
 .footer-service a {
   text-transform: uppercase;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 1.33;
@@ -1497,8 +1529,6 @@ section .contacts-about {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: 1;
-
   margin: 0;
 }
 
@@ -1507,7 +1537,6 @@ section .contacts-about {
   height: 559px;
   position: relative;
   z-index: 2;
-
   border: none;
   border-style: none;
 
@@ -1522,6 +1551,7 @@ section .contacts-about {
   margin-left: -480px;
   margin-top: -276px;
   padding: 75px 98px 100px 92px;
+  z-index: 4;
   -webkit-box-shadow: 0px 10px 20px 0 rgba(4, 6, 6, 0.2);
   box-shadow: 0px 10px 20px 0 rgba(4, 6, 6, 0.2);
 }
@@ -1560,7 +1590,7 @@ section .contacts-about {
   position: fixed;
   color: black;
   background-color: white;
-  z-index: 1;
+  z-index: 4;
 
 }
 
@@ -1570,7 +1600,7 @@ section .contacts-about {
 }
 
 .feedback-form label {
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 800;
 
@@ -1586,7 +1616,7 @@ section .contacts-about {
   display: -ms-flexbox;
   display: flex;
   padding-left: 20px;
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 14px;
 
   line-height: 1.29;
@@ -1594,14 +1624,22 @@ section .contacts-about {
   color: rgba(70, 70, 70, 0.4);
   background-color: rgba(70, 70, 70, 0.1);
 }
-
-.feedback-form input:focus {
-  background-color: #ffffff;
-  color: #464646;
+.feedback-form input:hover,
+.feedback-form textarea:hover{
+  background-color: rgb(234, 234, 234);
+  color: rgb(195, 195, 195);
 }
 
-.feedback-textarea input:invalid {
-  background-color: rgb(245, 217, 217);
+.feedback-form input:focus,
+.feedback-form textarea:focus {
+  background-color: #ffffff;
+  color: #464646;
+  border: 2px solid rgb(247, 226, 150);
+}
+
+.feedback-form input:invalid {
+  background-color: rgb(246, 218, 218);
+
 }
 
 .feedback-person {
@@ -1622,8 +1660,8 @@ section .contacts-about {
   width: 100%;
   min-height: 156px;
   padding: 20px;
-
-  font-family: 'Open Sans', "Arial", sans-serif;
+  resize: none;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 14px;
   line-height: 1.29;
   text-align: left;
@@ -1638,7 +1676,7 @@ section .contacts-about {
 
 main h1 {
   padding-left: 201px;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 47px;
   font-weight: 800;
   line-height: 1.02;
@@ -1648,8 +1686,8 @@ main h1 {
 }
 
 .container .monopod-title {
-  padding-left: 62px;
-  padding-top: 5px;
+  padding-left: 61px;
+  padding-top: 6px;
   margin-bottom: 20px;
 }
 
@@ -1676,7 +1714,7 @@ main h1 {
 
 .breadcrumbs a {
   padding-left: 16px;
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.71;
@@ -1725,7 +1763,7 @@ main h1 {
   -ms-flex-align: center;
   align-items: center;
   text-transform: uppercase;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 1.5;
@@ -1747,7 +1785,7 @@ main h1 {
   -ms-flex-pack: justify;
   justify-content: space-between;
   list-style: none;
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: normal;
   font-style: normal;
@@ -1846,7 +1884,7 @@ main h1 {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 0px;
   line-height: 1.29;
   text-align: left;
@@ -1863,7 +1901,9 @@ main h1 {
   min-height: 10px;
 
 }
-
+.sorting-arrow .arrow-check {
+  fill: black;
+}
 .sorting-arrow a {
   width: 11px;
   min-height: 10px;
@@ -1880,7 +1920,7 @@ main h1 {
 
 .filters h2 {
   text-transform: uppercase;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 2.5;
@@ -1965,9 +2005,9 @@ main h1 {
 .show {
   display: none;
   position: relative;
-  height: 12px;
+  height: 40px;
   padding: 0;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   text-transform: uppercase;
   text-align: center;
   vertical-align: center;
@@ -1987,6 +2027,7 @@ main h1 {
   height: 8px;
   top: 50%;
   right: 0;
+  transform: translateY(-50%);
   background-color: rgb(240, 196, 46);
   z-index: -1;
 }
@@ -1994,7 +2035,7 @@ main h1 {
 .point {
   display: none;
   padding: 0;
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 13px;
   font-weight: 300;
   letter-spacing: 0.13px;
@@ -2014,6 +2055,7 @@ main h1 {
 
 
 .monopod .actions {
+  display: none;
   position: absolute;
   top: 13px;
   left: 0;
@@ -2088,7 +2130,7 @@ main h1 {
 
 .price-range {
   width: 201px;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.71;
@@ -2145,7 +2187,7 @@ main h1 {
   display: inline-block;
   vertical-align: top;
   cursor: pointer;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 1.1;
@@ -2170,7 +2212,7 @@ main h1 {
 }
 
 .filter legend {
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 12px;
@@ -2215,7 +2257,7 @@ main h1 {
 }
 
 .bluetooth-list {
-  font-family: 'Open Sans', "Arial", sans-serif;
+  font-family: 'Open Sans', 'Arial', sans-serif;
   font-size: 14px;
   font-weight: 300;
   line-height: 2.86;
@@ -2240,6 +2282,7 @@ main h1 {
 /* Костомные чекбоксы */
 
 .check-input {
+  display: none;
   position: absolute;
   -webkit-appearance: none;
   -moz-appearance: none;
@@ -2248,17 +2291,19 @@ main h1 {
 
 .check::before {
   content: "";
+  width: 27px;
+  height: 23px;
+  margin-right: 10px;
+  vertical-align: middle;
+  background: none;
   background-image: url("../img/checkbox-off.svg");
   background-repeat: no-repeat;
   display: inline-block;
-  width: 23px;
-  height: 23px;
-  margin-right: 1.2em;
-  vertical-align: middle;
 }
 
 .check-input:disabled+.check {
   opacity: 0.3;
+
 }
 
 /* когда чекет */
@@ -2271,10 +2316,11 @@ main h1 {
 .check-input:active+.check,
 .check-input:checked+.check {
   font-weight: 600;
-  opacity: 1;
+  /* opacity: 1; */
 }
 
-.check-input:checked+.check:hover {
+.check-input:checked+.check:hover,
+.check:hover {
   opacity: 0.6;
 }
 
@@ -2318,11 +2364,12 @@ main h1 {
 }
 
 .monopod:hover .actions {
+  display: flex;
   background: rgb(238, 238, 238, 0.8);
 }
 
 .monopod:hover .show,
-.monopod:hover .point {
+.monopod:hover .point{
   display: block;
 }
 
@@ -2333,7 +2380,7 @@ main h1 {
   -webkit-box-pack: justify;
   -ms-flex-pack: justify;
   justify-content: space-between;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 18px;
   font-weight: 800;
   line-height: 1.33;
@@ -2354,7 +2401,7 @@ main h1 {
 
 .monopod-price {
   width: 84px;
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 16px;
   font-weight: 300;
   line-height: 1.5;
@@ -2401,7 +2448,7 @@ main h1 {
 }
 
 .pagination-list a {
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 1.5;
@@ -2443,7 +2490,7 @@ main h1 {
 }
 
 .pagination-item a {
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 1.5;
@@ -2454,7 +2501,7 @@ main h1 {
 }
 
 .pagination-current a {
-  font-family: "Gilroy", "Arial", sans-serif;
+  font-family: 'Gilroy', 'Arial', sans-serif;
   font-size: 16px;
   font-weight: 800;
   line-height: 1.5;
